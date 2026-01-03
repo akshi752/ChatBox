@@ -4,7 +4,6 @@ const Chat = require("./models/chat");
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 8080;
 const methodOverride = require("method-override");
 
 const PORT = process.env.PORT || 8080;
@@ -30,8 +29,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 app.use(express.static(path.join(__dirname, "./public")));
 
-app.listen(port, () => {
-  console.log(`Port ${port} is listening`);
+app.listen(PORT, () => {
+  console.log(`Port ${PORT} is listening`);
 });
 //index page
 app.get("/chats", async (req, res) => {
