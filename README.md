@@ -28,23 +28,23 @@ It allows users to create, view, edit, and delete chat messages with proper vali
 ## 📂 Project Structure
 
 ChatBox/
-│
 ├── models/
-│ └── chat.js
+│   └── chat.js
 ├── views/
-│ ├── chats.ejs
-│ ├── new.ejs
-│ └── edit.ejs
+│   ├── chats.ejs
+│   ├── new.ejs
+│   └── edit.ejs
 ├── public/
-│ |── chats.css
-│ |── icon.png
-| └──style.js
+│   ├── chats.css
+│   ├── icon.png
+│   └── style.js
 ├── index.js
 ├── init.js
 ├── package-lock.json
 ├── package.json
 ├── .gitignore
 └── README.md
+
 
 
 ## 🔗 API Routes
