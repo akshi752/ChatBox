@@ -37,6 +37,7 @@ app.get("/chats", async (req, res) => {
   let chats = await Chat.find({}); // these function are asynchronous either need .then or need async await
   let status = req.query.status;
   let messg=req.query.messg;
+    console.log("Chats from DB:", chats); 
   res.render("chats", { chats, status,messg });
 });
 
