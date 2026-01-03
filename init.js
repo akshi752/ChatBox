@@ -1,19 +1,13 @@
 const Chat=require("./models/chat");
 const mongoose=require("mongoose");
 
+const MONGO_URI = process.env.MONGO_URI;
 
-main()
-.then(()=>{
-    console.log("Connection to Mongodb Successful...");
-})
-.catch((err)=>{
-    consolelog(err);
-})
-
-async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/ChatBox");
-}
-
+// MongoDB connection
+mongoose
+  .connect(MONGO_URI)
+  .then(() => console.log("Connection to MongoDB successful"))
+  .catch((err) => console.error(err));
 
 Chat.insertMany([
   {
