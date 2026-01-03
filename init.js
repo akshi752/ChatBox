@@ -9,7 +9,7 @@ mongoose
   .then(() => console.log("Connection to MongoDB successful"))
   .catch((err) => console.error(err));
 
-Chat.insertMany([
+const seedChats=[
   {
     from: "Akshi",
     to: "Manager",
@@ -25,11 +25,21 @@ Chat.insertMany([
     to: "Pragya",
     mesg: "Sounds good to me. I am happy to join and coordinate as needed. Let me know the details."
   }
-])
+];
 
-.then((res)=>{
-    console.log(res);
-})
-.catch((err)=>{
-    console.log(err);
-})
+const seedDB = async () => {
+  try {
+    // Optional: clear old chats first
+    await Chat.deleteMany({});
+    
+    // Insert seed chats
+    const res = await Chat.insertMany(seedChats);
+    console.log("Seed data inserted successfully:", res);
+  } catch (err) {
+    console.error("Error seeding DB:", err);
+  } finally {
+    mongoose.connection.close();
+  }
+};
+
+seedDB();
