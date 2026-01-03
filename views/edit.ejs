@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="/chats.css" />
+    <link rel="icon" href="/icon.png" />
+  </head>
+  <body>
+    <h1>Edit Your Messg!!</h1>
+    <b>From: </b><i><%=chat.from%></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b
+      >To: </b
+    ><i><%=chat.to%></i>
+    <br />
+    <br />
+    <br />
+    <form method="post" action="/chats/<%=chat.id%>?_method=patch">
+      <label name="mesg" for="mesg">MESSAGE!!</label><br />
+      <br />
+      <textarea rows="8" cols="50" name="mesg" id="mesg"><%=chat.mesg%></textarea>
+      <br />
+      <br /><br />
+      <button class="newChat">Submit</button>
+    </form>
+  </body>
+</html>

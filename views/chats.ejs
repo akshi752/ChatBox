@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chats</title>
+    <link rel="stylesheet" href="/chats.css" />
+    <link rel="icon" href="/icon.png" />
+  </head>
+  <body>
+    <h1>ChatBOX...</h1>
+
+    <%for(let chat of chats){%>
+    <div class="chat">
+      <p>
+        <b>From: </b><i><%=chat.from%></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b
+          >To: </b
+        ><i><%=chat.to%></i>
+      </p>
+      <p><%=chat.mesg%></p>
+      <div class="lastLine">
+
+        <div class="editAndDelete">
+        <form method="get" action="/chats/<%=chat.id%>/edit">
+          <button class="newChat">Edit</button>
+        </form>
+        <form   onsubmit="return confirm('Are you sure you want to delete this chat?')" method="post" action="/chats/<%=chat.id%>?_method=delete">
+          <button class="newChat">Delete</button>
+        </form>
+        </div>
+        <p><b>CreatedOn:</b>&nbsp;&nbsp;<i><%=chat.createdAt.toString().split(" ").slice(1,5).join(" ")%></i>
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
+            <b>UpdatedOn:</b>&nbsp;&nbsp;<i><%=chat.updatedAt.toString().split(" ").slice(1,5).join(" ")%></i>
+        </p>
+      </div>
+      
+      
+    </div>
+
+    <%}%>
+    <form method="get" action="/chats/new">
+      <button class="newChat">New chat</button>
+    </form>
+
+    <%if(status==="added"){%>
+        <script>
+            alert("Chat added Successfully!!");
+        </script>
+        <%}%>
+        <%if(status==="edited"){%>
+        <script>
+            alert("Chat edited Successfully!!");
+        </script>
+        <%}%>
+        <%if(status==="deleted"){%>
+        <script>
+            alert("Chat deleted Successfully!!");
+        </script>
+        <%}%>
+        <%if(status==="error"){%>
+        <script>
+            alert("<%=messg%>");
+        </script>
+        <%}%>
+  </body>
+</html>

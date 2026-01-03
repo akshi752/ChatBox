@@ -1,0 +1,34 @@
+body{
+    background-color:beige;
+    padding:10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.chat{
+    background-color: #FFFFFF;
+    border:2px solid  #E0D6C8;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+.newChat{
+    margin-top:10px;
+    font-weight:600;
+    border-radius:5px;
+}
+input{
+   border-radius:5px; 
+   padding:5px;
+}textarea{
+border-radius:10px;
+padding:5px;
+}
+.editAndDelete{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:140px;
+}
+.lastLine{
+    display:flex;
+    justify-content: space-between;
+}
