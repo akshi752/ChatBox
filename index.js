@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('dotenv').config(); 
 const Chat = require("./models/chat");
 
 const express = require("express");

@@ -28,12 +28,22 @@
           <button class="newChat">Delete</button>
         </form>
         </div>
-        <p><b>CreatedOn:</b>&nbsp;&nbsp;<i><%=chat.createdAt.toString().split(" ").slice(1,5).join(" ")%></i>
+        <p><b>CreatedOn:</b>&nbsp;&nbsp;<i>
+          <% if (chat.createdAt) { %>
+  <%= chat.createdAt.toString().split(" ").slice(1,5).join(" ") %>
+<% } else { %>
+  Not Available
+<% } %></i>
             &nbsp;&nbsp;
             &nbsp;&nbsp;
             &nbsp;&nbsp;
             &nbsp;&nbsp;
-            <b>UpdatedOn:</b>&nbsp;&nbsp;<i><%=chat.updatedAt.toString().split(" ").slice(1,5).join(" ")%></i>
+            <b>UpdatedOn:</b>&nbsp;&nbsp;<i>
+              <% if (chat.updatedAt) { %>
+  <%= chat.updatedAt.toString().split(" ").slice(1,5).join(" ") %>
+<% } else { %>
+  Not Available
+<% } %></i>
         </p>
       </div>
       
