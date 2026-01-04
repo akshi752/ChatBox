@@ -1,86 +1,78 @@
-# ChatBox 💬
+## ChatBox 💬
 
-ChatBox is a mini full-stack CRUD web application built using **Node.js**, **Express**, **MongoDB**, **Mongoose**, and **EJS**.  
-It allows users to create, view, edit, and delete chat messages with proper validation and user feedback.
-
+ChatBox is a mini full-stack CRUD web application built using Node.js, Express, MongoDB, Mongoose, and EJS.
+It allows users to create, view, edit, and delete chat messages with server-side validation and a clean UI.
 
 ## 🚀 Features
 
-- Create new chat messages
-- View all chats
-- Edit existing chat messages
-- Delete chats with confirmation popup
-- Message length validation (max 150 characters)
-- Success & error popups using query parameters
-- Server-side schema validation using Mongoose
-- RESTful routing
-- Clean UI using EJS templates
+Create new chat messages
 
----
+View all chats
+
+Edit existing chat messages
+
+Delete chats with confirmation popup
+
+Message length validation (max 150 characters)
+
+Success & error popups using query parameters
+
+RESTful routing
+
+Clean UI with EJS templates
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB, Mongoose
-- **Frontend:** EJS, HTML, CSS
-- **Others:** Method Override
+Backend: Node.js, Express.js
+
+Database: MongoDB Atlas, Mongoose
+
+Frontend: EJS, HTML, CSS, JavaScript
+
+Others: Method Override
 
 ## 📂 Project Structure
-
 ChatBox/
 ├── models/
-│   └── chat.js
+│   └── chat.js          # Chat schema
 ├── views/
-│   ├── chats.ejs
-│   ├── new.ejs
-│   └── edit.ejs
+│   ├── chats.ejs        # Show all chats
+│   ├── new.ejs          # Form to create new chat
+│   └── edit.ejs         # Edit chat form
 ├── public/
-│   ├── chats.css
-│   ├── icon.png
-│   └── style.js
-├── index.js
-├── init.js
-├── package-lock.json
+│   ├── chats.css        # Styles
+│   ├── icon.png         # Icon
+│   └── style.js         # Frontend JS
+├── .env                 # Environment variables (not included in repo)
+├── index.js             # Entry point
+├── init.js              # DB initialization (if needed)
 ├── package.json
-├── .gitignore
+├── package-lock.json
 └── README.md
-
 
 
 ## 🔗 API Routes
 
-### 🔹 Get all chats
-GET /chats
-### 🔹 Show form to create a new chat
-GET /chats/new
-### 🔹 Create a new chat
-POST /chats
-### 🔹 Show edit form for a chat
-GET /chats/:id/edit
-### 🔹 Update a chat message
-PATCH /chats/:id
-### 🔹 Delete a chat
-DELETE /chats/:id
+| Method | Route           | Description                |
+| ------ | --------------- | -------------------------- |
+| GET    | /chats          | Get all chats              |
+| GET    | /chats/new      | Show form to create a chat |
+| POST   | /chats          | Create a new chat message  |
+| GET    | /chats/:id/edit | Show edit form for a chat  |
+| PATCH  | /chats/:id      | Update a chat message      |
+| DELETE | /chats/:id      | Delete a chat              |
 
 
 ## ⚠️ Validations
 
-- Message length is limited to **150 characters**
-- Validation errors are handled at **schema level**
-- Custom error messages are displayed via popup alerts
+Message length limited to 150 characters
 
-## ▶️ How to Run the Project Locally
+Validation errors handled via Mongoose schema
 
-### 1️⃣ Clone the Repository
-git clone https://github.com/your-username/ChatBox.git
-### 2️⃣ Navigate to the Project Directory
-cd ChatBox
-### 3️⃣ Install Dependencies
-npm install
-### 4️⃣ Start MongoDB
-Make sure MongoDB is running locally on:
-### 5️⃣ Run the Application
-node index.js
-### 6️⃣ Open in Browser
-Visit:
-http://localhost:8080/chats
+Custom error messages displayed as popup alerts
+
+## 🌐 Live Demo
+
+Access the deployed version on Render using MongoDB Atlas:
+
+https://chatbox-56fs.onrender.com/chats
